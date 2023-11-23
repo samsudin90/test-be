@@ -7,15 +7,11 @@ import { PostDto } from './app.dto';
 
 @Controller()
 export class AppController {
-  constructor(private readonly appService: AppService, private http : ApicallService) {}
+  constructor(private readonly appService: AppService) {}
 
   @Get()
   async getHello() {
-    // const data = await this.http.getUraian('10079000')
-    // console.log(data)
-    const data1 = await this.http.getBm('10079000')
-    // console.log(data1.code)
-    return 1
+    return this.appService.getHello()
   }
   
   @Post()
